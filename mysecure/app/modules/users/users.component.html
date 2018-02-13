@@ -1,0 +1,17 @@
+<ActionBar title="Active Users" backgroundColor="orange">
+</ActionBar>
+
+<side-drawer-page>
+        <ListView [items]="countries" (itemTap)="onItemTap($event)" class="list-group">
+                <ng-template let-country="item" let-i="index" let-odd="odd" let-even="even">
+                    <GridLayout class="list-group-item">
+                        <Label [text]="country.name"></Label>
+                    </GridLayout>
+                </ng-template>
+            </ListView>
+  
+
+<StackLayout >
+        <Label [text]="name"></Label>
+    </StackLayout>
+</side-drawer-page>

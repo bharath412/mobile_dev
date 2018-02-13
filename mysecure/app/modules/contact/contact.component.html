@@ -1,0 +1,36 @@
+<ActionBar title="Notifications" backgroundColor="orange">
+</ActionBar>
+
+<side-drawer-page>
+
+        <TabView [(ngModel)]="tabSelectedIndex" selectedColor="#FF0000" iosIconRenderingMode="alwaysOriginal" sdkExampleTitle sdkToggleNavButton>
+               
+                
+                <StackLayout *tabItem="{title: 'Hyderabad'}" >
+                                <PullToRefresh (refresh)="refreshList($event)">
+                    <ListView [items]="activities$ | async" height="600" rowHeight="60" >
+                            <ng-template let-item="item">
+                                    <Label class="h4 p-15"  [text]='item.id + "  " + item.name + "  " + item.profession'></Label>
+                            </ng-template>
+                          </ListView>
+                        </PullToRefresh>
+                </StackLayout>
+       
+                <StackLayout *tabItem="{title: 'Mumbai'}">
+                    <StackLayout>
+                            <ListView [items]="activities$ | async" height="600" rowHeight="60">
+                                    <ng-template let-item="item">
+                                            <Label class="h4 p-15"  [text]='item.id + "  " + item.name + "  " + item.profession'></Label>
+                                    </ng-template>
+                                  </ListView>   </StackLayout>
+                </StackLayout>
+                <StackLayout *tabItem="{title: 'Delhi'}">
+                    <StackLayout>
+                            <ListView [items]="activities$ | async" height="600" rowHeight="60">
+                                    <ng-template let-item="item">
+                                            <Label class="h4 p-15"  [text]='item.id + "  " + item.name + "  " + item.profession'></Label>
+                                    </ng-template>
+                                  </ListView>  </StackLayout>
+                </StackLayout>
+            </TabView>
+</side-drawer-page>
